@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -18,7 +19,8 @@ public class RobotClientService {
 
 	private RestTemplate restTemplate;
 
-	private static final String URL = "https://robotstakeover20210903110417.azurewebsites.net/robotcpu";
+	@Value("${robot.cpu.system.url}")
+	private String url;
 
 	@Autowired
 	public RobotClientService(RestTemplate restTemplate) {
@@ -27,7 +29,7 @@ public class RobotClientService {
 
 	public List<Robot> getRobotDetails() {
 		log.info("Get Robot CPU Client Details");
-		ResponseEntity<Robot[]> responseEntity = restTemplate.getForEntity(URL, Robot[].class);
+		ResponseEntity<Robot[]> responseEntity = restTemplate.getForEntity(url, Robot[].class);
 		return Arrays.asList(responseEntity.getBody());
 	}
 }
