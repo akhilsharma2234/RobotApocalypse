@@ -52,6 +52,7 @@ In order to accomplish this, the API must fulfil the following use cases:
  - Once done, please check this into a GitHub repo. Please ensure that you have a 
 comprehensive readme that details how to run the application.
 ---------------------------------------
+
 # Solution
 In order to accomplish this challenge, I decided to use Spring boot + Rest Api option. 
 
