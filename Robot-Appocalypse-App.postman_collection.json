@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "21068ef1-d5bd-4778-925a-8e43c6d5361f",
+		"name": "Robot-Appocalypse-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register-Survivor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Aman\",\r\n    \"age\": 27,\r\n    \"gender\": \"Female\",\r\n    \"location\": {\r\n        \"latitude\": 30.72,\r\n        \"longitude\": 76.78\r\n    },\r\n    \"resources\": {\r\n        \"water\": 15,\r\n        \"ammunition\": 100,\r\n        \"medication\": 4,\r\n        \"food\": 10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/survivors/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-All-Survivors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/survivors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Survivor-By-Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/survivors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Survivor-Location",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"latitude\": 11111.00,\r\n    \"longitude\": 2222.22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/survivors/1/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors",
+						"1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report-Survivors-As-Infected",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/survivors/1/reportInfection/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors",
+						"1",
+						"reportInfection",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Reports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/survivors/reports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"survivors",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
